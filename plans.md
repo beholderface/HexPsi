@@ -12,4 +12,6 @@ Planned for later:
 
 Maybe:
 - Greater sentinel extends psi ambit
-- Amethyst CAD components
+- Amethyst CAD components (phial battery?)
+- Psi material hex trinkets or similar
+- CAD battery as insulation against hex bloodcasting
