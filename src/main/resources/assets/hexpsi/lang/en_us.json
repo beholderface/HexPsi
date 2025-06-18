@@ -1,0 +1,9 @@
+{
+  "hexpsi.spellpiece.selector_sentinel_pos": "Selector: Sentinel Position",
+  "hexpsi.spellpiece.selector_sentinel_pos.desc": "Returns your sentinel's position.",
+  "hexpsi.spellpiece.selector_sentinel_tier": "Selector: Sentinel Tier",
+  "hexpsi.spellpiece.selector_sentinel_tier.desc": "Returns your sentinel's tier, with a nonexistent or inaccessible sentinel returning 0.",
+  "hexpsi.spellpiece.trick_set_sentinel": "Trick: Set Sentinel",
+  "hexpsi.spellpiece.trick_set_sentinel.desc": "Summons your sentinel at the target position.",
+  "psi.spellparam.hexpsi:sentineltier": "Tier"
+}

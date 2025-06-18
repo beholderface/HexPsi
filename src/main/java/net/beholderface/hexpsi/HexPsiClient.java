@@ -1,7 +1,7 @@
 package net.beholderface.hexpsi;
 
 import net.beholderface.hexpsi.pieces.HexPsiPieces;
-import net.beholderface.hexpsi.pieces.selector.PieceSelectorSentinel;
+import net.beholderface.hexpsi.pieces.selector.PieceSelectorSentinelPos;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -16,7 +16,7 @@ public class HexPsiClient {
 
     @SubscribeEvent
     public static void init(RegisterEvent event){
-        registerPieceTexture(PieceSelectorSentinel.class);
+        registerPieceTexture(PieceSelectorSentinelPos.class);
     }
 
     private static void registerPieceTexture(Class<? extends SpellPiece> piece){

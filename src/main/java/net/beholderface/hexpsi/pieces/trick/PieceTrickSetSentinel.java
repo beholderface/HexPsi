@@ -13,8 +13,8 @@ public class PieceTrickSetSentinel extends PieceTrick {
     SpellParam<Number> tier;
     public PieceTrickSetSentinel(Spell spell) {
         super(spell);
-        this.setStatLabel(EnumSpellStat.POTENCY, (new StatLabel("psi.spellparam.power", true)).max((double)0.5F).mul((double)70.0F).floor());
-        this.setStatLabel(EnumSpellStat.COST, (new StatLabel("psi.spellparam.power", true)).max((double)0.5F).mul((double)210.0F).floor());
+        this.setStatLabel(EnumSpellStat.POTENCY, (new StatLabel("psi.spellparam.hexpsi:sentineltier", true)).max((double)10.0F).mul((double)25.0F).floor());
+        this.setStatLabel(EnumSpellStat.COST, (new StatLabel("psi.spellparam.hexpsi:sentineltier", true)).mul((double)250.0F).max((double)25.0F).floor());
     }
 
     public void initParams() {
@@ -25,9 +25,9 @@ public class PieceTrickSetSentinel extends PieceTrick {
     public void addToMetadata(SpellMetadata meta) throws SpellCompilationException {
         super.addToMetadata(meta);
         Double powerVal = (Double)this.getParamEvaluation(this.tier);
-        if (powerVal != null && !(powerVal <= (double)0.0F)) {
+        if (powerVal != null) {
             powerVal = Math.max((double)0F, powerVal);
-            meta.addStat(EnumSpellStat.POTENCY, (int)(powerVal * (double)25.0F));
+            meta.addStat(EnumSpellStat.POTENCY, (int)Math.max(powerVal * (double)25.0F, 10.0f));
             meta.addStat(EnumSpellStat.COST, (int)(Math.max(powerVal * (double)250.0F, 25.0F)));
         } else {
             throw new SpellCompilationException("psi.spellerror.nonpositivevalue", this.x, this.y);

@@ -2,7 +2,8 @@ package net.beholderface.hexpsi.pieces;
 
 import com.mojang.datafixers.util.Pair;
 import net.beholderface.hexpsi.HexPsi;
-import net.beholderface.hexpsi.pieces.selector.PieceSelectorSentinel;
+import net.beholderface.hexpsi.pieces.selector.PieceSelectorSentinelPos;
+import net.beholderface.hexpsi.pieces.selector.PieceSelectorSentinelTier;
 import net.beholderface.hexpsi.pieces.trick.PieceTrickSetSentinel;
 import net.minecraft.resources.ResourceLocation;
 import vazkii.psi.api.PsiAPI;
@@ -17,11 +18,13 @@ public class HexPsiPieces {
     //
     public static final Map<Class<? extends SpellPiece>, Pair<ResourceLocation, ResourceLocation>> PIECE_RESLOC_MAP = new HashMap<>();
 
-    public static ModSpellPieces.PieceContainer selectorSentinel;
+    public static ModSpellPieces.PieceContainer selectorSentinelPos;
+    public static ModSpellPieces.PieceContainer selectorSentinelTier;
     public static ModSpellPieces.PieceContainer trickSetSentinel;
 
     public static void init(){
-        selectorSentinel = register(PieceSelectorSentinel.class, "selector_sentinel", "memory_management");
+        selectorSentinelPos = register(PieceSelectorSentinelPos.class, "selector_sentinel_pos", "memory_management");
+        selectorSentinelTier = register(PieceSelectorSentinelTier.class, "selector_sentinel_tier", "memory_management");
         trickSetSentinel = register(PieceTrickSetSentinel.class, "trick_set_sentinel", "misc_tricks");
     }
 

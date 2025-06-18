@@ -7,8 +7,8 @@ import vazkii.psi.api.spell.SpellContext;
 import vazkii.psi.api.spell.SpellRuntimeException;
 import vazkii.psi.api.spell.piece.PieceSelector;
 
-public class PieceSelectorSentinel extends PieceSelector {
-    public PieceSelectorSentinel(Spell spell) {
+public class PieceSelectorSentinelPos extends PieceSelector {
+    public PieceSelectorSentinelPos(Spell spell) {
         super(spell);
     }
 
@@ -19,7 +19,7 @@ public class PieceSelectorSentinel extends PieceSelector {
 
     public Object execute(SpellContext context) throws SpellRuntimeException {
         var sentinel = IXplatAbstractions.INSTANCE.getSentinel(context.caster);
-        if (sentinel != null){
+        if (sentinel != null && sentinel.dimension() == context.caster.level().dimension()){
             return Vector3.fromVec3d(sentinel.position());
         } else {
             return Vector3.zero;
