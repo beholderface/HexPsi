@@ -26,7 +26,9 @@ public class SentinelPsiAmbitMixin {
                     Vec3 sentinelPos = sentinel.position();
                     extended = MathHelper.pointDistanceSpace(x, y, z, sentinelPos.x, sentinelPos.y, sentinelPos.z) <= 16.0;
                 }
-                cir.setReturnValue(extended);
+                if (extended){
+                    cir.setReturnValue(true);
+                }
             }
         }
     }

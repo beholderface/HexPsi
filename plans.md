@@ -3,12 +3,14 @@ Currently implemented:
 - Get sentinel tier piece (missing/basic/greater)
 - Greater sentinel extends psi ambit
 - Clarity/Clouding status effects modify psi regen rate
+- Spell pieces to write compatible hex iotas
+- Allow hex to treat vector rulers as R/W iota storage
 
 To do:
+- Spell pieces to read compatible hex iotas
+- Make iota read/write pieces actually error
 
 Planned for later: 
-- Allow hex to treat vector rulers as R/W iota storage
-- Spell pieces to read/write compatible hex iotas
 
 Maybe:
 - Amethyst CAD components (phial battery?)

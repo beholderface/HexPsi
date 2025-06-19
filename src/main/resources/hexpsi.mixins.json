@@ -5,6 +5,7 @@
   "refmap": "psi.refmap.json",
   "mixins": [
     "PlayerRegenRateMixin",
+    "ReadFromRulerMixin",
     "SentinelPsiAmbitMixin"
   ],
   "minVersion": "0.8.5"
