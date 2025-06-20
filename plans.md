@@ -11,6 +11,7 @@ To do:
 - Make iota read/write pieces actually error
 
 Planned for later: 
+- Hex pattern to read psi meter
 
 Maybe:
 - Amethyst CAD components (phial battery?)
