@@ -21,7 +21,6 @@ public abstract class HelmetVectorStorageMixin implements IotaHolderItem {
     public @Nullable CompoundTag readIotaTag(ItemStack itemStack) {
         if (this.getAttachedSensor(itemStack).getItem() instanceof FocusExosuitSensorItem focusSensor){
             CompoundTag tag = focusSensor.readIotaTag(itemStack);;
-            HexPsi.LOGGER.info(tag != null ? tag.getAsString() : "tag null");
             return tag;
         }
         return null;

@@ -1,7 +1,10 @@
 package net.beholderface.hexpsi;
 
 import at.petrak.hexcasting.api.casting.ActionRegistryEntry;
+import at.petrak.hexcasting.common.lib.HexCreativeTabs;
 import at.petrak.hexcasting.common.lib.HexRegistries;
+import com.mojang.datafixers.util.Either;
+import com.mojang.datafixers.util.Pair;
 import com.mojang.logging.LogUtils;
 import net.beholderface.hexpsi.registry.HexPsiItems;
 import net.beholderface.hexpsi.registry.HexPsiPatterns;
@@ -15,6 +18,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -27,7 +31,10 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegisterEvent;
 import org.slf4j.Logger;
+import vazkii.psi.common.core.PsiCreativeTab;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
@@ -49,13 +56,27 @@ public class HexPsi
         modEventBus.addListener(this::commonSetup);
 
         initRegistries(modEventBus);
-        /*BLOCKS.register(modEventBus);
-        CREATIVE_MODE_TABS.register(modEventBus);*/
+        modEventBus.addListener(this::addToCreative);
 
         MinecraftForge.EVENT_BUS.register(this);
 
         context.registerConfig(ModConfig.Type.COMMON, HexPsiConfig.SPEC);
         HexPsiPieces.init();
+    }
+
+    private void addToCreative(BuildCreativeModeTabContentsEvent event){
+        Item[] psiTabItems = {HexPsiItems.HELMET_SENSOR_FOCUS.get()};
+        Item[] hexTabItems = {HexPsiItems.PSI_CORE_STAFF.get()};
+        if (event.getTabKey() == PsiCreativeTab.PSI_CREATIVE_TAB){
+            for (Item i : psiTabItems){
+                event.accept(i);
+            }
+        }
+        if (event.getTab() == HexCreativeTabs.HEX){
+            for (Item i : hexTabItems){
+                event.accept(i);
+            }
+        }
     }
 
     public static void initRegistries(IEventBus bus){
