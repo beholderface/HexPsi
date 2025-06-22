@@ -1,6 +1,6 @@
 package net.beholderface.hexpsi;
 
-import net.beholderface.hexpsi.pieces.HexPsiPieces;
+import net.beholderface.hexpsi.registry.HexPsiPieces;
 import net.beholderface.hexpsi.pieces.selector.PieceSelectorSentinelPos;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;

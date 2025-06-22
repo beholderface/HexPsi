@@ -1,7 +1,8 @@
-package net.beholderface.hexpsi.pieces;
+package net.beholderface.hexpsi.registry;
 
 import com.mojang.datafixers.util.Pair;
 import net.beholderface.hexpsi.HexPsi;
+import net.beholderface.hexpsi.pieces.selector.PieceSelectorHelmetVector;
 import net.beholderface.hexpsi.pieces.selector.PieceSelectorSentinelPos;
 import net.beholderface.hexpsi.pieces.selector.PieceSelectorSentinelTier;
 import net.beholderface.hexpsi.pieces.trick.PieceTrickSetSentinel;
@@ -21,6 +22,9 @@ public class HexPsiPieces {
 
     public static ModSpellPieces.PieceContainer selectorSentinelPos;
     public static ModSpellPieces.PieceContainer selectorSentinelTier;
+
+    public static ModSpellPieces.PieceContainer selectorHelmetVector;
+
     public static ModSpellPieces.PieceContainer trickSetSentinel;
     public static ModSpellPieces.PieceContainer trickWriteVec;
     public static ModSpellPieces.PieceContainer trickWriteNum;
@@ -30,6 +34,9 @@ public class HexPsiPieces {
     public static void init(){
         selectorSentinelPos = register(PieceSelectorSentinelPos.class, "selector_sentinel_pos", "memory_management");
         selectorSentinelTier = register(PieceSelectorSentinelTier.class, "selector_sentinel_tier", "memory_management");
+
+        selectorHelmetVector = register(PieceSelectorHelmetVector.class, "selector_helmet_vector", "memory_management");
+
         trickSetSentinel = register(PieceTrickSetSentinel.class, "trick_set_sentinel", "misc_tricks");
         trickWriteVec = register(PieceTrickWriteVector.class, "trick_write_iota_vec", "misc_tricks");
         trickWriteNum = register(PieceTrickWriteNumber.class, "trick_write_iota_num", "misc_tricks");

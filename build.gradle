@@ -18,6 +18,7 @@ plugins {
     id 'net.minecraftforge.gradle' version '[6.0,6.2)'
     id 'org.parchmentmc.librarian.forgegradle' version '1.+'
     id 'org.spongepowered.mixin' version '0.+'
+    id 'org.jetbrains.kotlin.jvm'
 }
 
 version = mod_version
@@ -162,6 +163,7 @@ repositories {
         url = "https://maven.theillusivec4.top/"
     }
     maven { url "https://maven.shedaniel.me/" }
+    mavenCentral()
 }
 
 dependencies {
@@ -194,6 +196,7 @@ dependencies {
 
     compileOnly fg.deobf("vazkii.patchouli:Patchouli:${patchouli_version}")
     runtimeOnly fg.deobf("vazkii.patchouli:Patchouli:${patchouli_version}")
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
 
     // Example mod dependency using a mod jar from ./libs with a flat dir repository
     // This maps to ./libs/coolmod-${mc_version}-${coolmod_version}.jar
@@ -267,4 +270,7 @@ publishing {
 
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8' // Use the UTF-8 charset for Java compilation
+}
+kotlin {
+    jvmToolchain(17)
 }

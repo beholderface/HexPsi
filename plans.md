@@ -5,13 +5,17 @@ Currently implemented:
 - Clarity/Clouding status effects modify psi regen rate
 - Spell pieces to write compatible hex iotas
 - Allow hex to treat vector rulers as R/W iota storage
+- Helmet sensor that you can write vectors to via hex, and it will trigger the helmet's spell
+- Spell piece to read vector from helmet
 
 To do:
 - Spell pieces to read compatible hex iotas
-- Make iota read/write pieces actually error
+- Make spell pieces actually error
+- Hex pattern to read iota from helmet
 
 Planned for later: 
 - Hex pattern to read psi meter
+- More sensors for more iota types
 
 Maybe:
 - Amethyst CAD components (phial battery?)
