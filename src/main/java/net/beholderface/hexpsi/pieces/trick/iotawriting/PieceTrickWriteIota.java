@@ -35,8 +35,7 @@ public abstract class PieceTrickWriteIota extends PieceTrick {
             }
         }
         if (this.holder == null){
-            HexPsi.LOGGER.info("Could not find a writeable stack in hand.");
-            return null; //no writeable thing exception
+            throw new SpellRuntimeException("hexpsi.spellerror.writeable");
         }
         return null;
     }

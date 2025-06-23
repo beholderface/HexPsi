@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "D": {
+      "item": "hexcasting:focus"
+    },
+    "G": {
+      "item": "minecraft:amethyst_shard"
+    },
+    "I": {
+      "tag": "forge:ingots/psimetal"
+    }
+  },
+  "pattern": [
+    " G ",
+    "IDI",
+    " G "
+  ],
+  "result": {
+    "item": "hexpsi:exosuit_vector_focus_sensor"
+  }
+}

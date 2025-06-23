@@ -5,6 +5,7 @@ import net.beholderface.hexpsi.HexPsi;
 import net.beholderface.hexpsi.pieces.selector.PieceSelectorHelmetVector;
 import net.beholderface.hexpsi.pieces.selector.PieceSelectorSentinelPos;
 import net.beholderface.hexpsi.pieces.selector.PieceSelectorSentinelTier;
+import net.beholderface.hexpsi.pieces.selector.iotareading.*;
 import net.beholderface.hexpsi.pieces.trick.PieceTrickSetSentinel;
 import net.beholderface.hexpsi.pieces.trick.iotawriting.*;
 import net.minecraft.resources.ResourceLocation;
@@ -23,6 +24,11 @@ public class HexPsiPieces {
     public static ModSpellPieces.PieceContainer selectorSentinelPos;
     public static ModSpellPieces.PieceContainer selectorSentinelTier;
 
+    public static ModSpellPieces.PieceContainer selectorReadVector;
+    public static ModSpellPieces.PieceContainer selectorReadNumber;
+    public static ModSpellPieces.PieceContainer selectorReadEntity;
+    public static ModSpellPieces.PieceContainer selectorReadEntities;
+
     public static ModSpellPieces.PieceContainer selectorHelmetVector;
 
     public static ModSpellPieces.PieceContainer trickSetSentinel;
@@ -32,16 +38,21 @@ public class HexPsiPieces {
     public static ModSpellPieces.PieceContainer trickWriteEntities;
 
     public static void init(){
-        selectorSentinelPos = register(PieceSelectorSentinelPos.class, "selector_sentinel_pos", "memory_management");
-        selectorSentinelTier = register(PieceSelectorSentinelTier.class, "selector_sentinel_tier", "memory_management");
+        selectorSentinelPos = register(PieceSelectorSentinelPos.class, "selector_sentinel_pos", "sentinels");
+        selectorSentinelTier = register(PieceSelectorSentinelTier.class, "selector_sentinel_tier", "sentinels");
 
-        selectorHelmetVector = register(PieceSelectorHelmetVector.class, "selector_helmet_vector", "memory_management");
+        selectorReadVector = register(PieceSelectorReadVector.class, "selector_read_vec", "iota_io");
+        selectorReadNumber = register(PieceSelectorReadNumber.class, "selector_read_num", "iota_io");
+        selectorReadEntity = register(PieceSelectorReadEntity.class, "selector_read_entity", "iota_io");
+        selectorReadEntities = register(PieceSelectorReadEntities.class, "selector_read_entities", "iota_io");
 
-        trickSetSentinel = register(PieceTrickSetSentinel.class, "trick_set_sentinel", "misc_tricks");
-        trickWriteVec = register(PieceTrickWriteVector.class, "trick_write_iota_vec", "misc_tricks");
-        trickWriteNum = register(PieceTrickWriteNumber.class, "trick_write_iota_num", "misc_tricks");
-        trickWriteEntity = register(PieceTrickWriteEntity.class, "trick_write_iota_entity", "misc_tricks");
-        trickWriteEntities = register(PieceTrickWriteEntities.class, "trick_write_iota_entities", "misc_tricks");
+        selectorHelmetVector = register(PieceSelectorHelmetVector.class, "selector_helmet_vec", "iota_io");
+
+        trickSetSentinel = register(PieceTrickSetSentinel.class, "trick_set_sentinel", "sentinels");
+        trickWriteVec = register(PieceTrickWriteVector.class, "trick_write_iota_vec", "iota_io");
+        trickWriteNum = register(PieceTrickWriteNumber.class, "trick_write_iota_num", "iota_io");
+        trickWriteEntity = register(PieceTrickWriteEntity.class, "trick_write_iota_entity", "iota_io");
+        trickWriteEntities = register(PieceTrickWriteEntities.class, "trick_write_iota_entities", "iota_io");
     }
 
     public static ModSpellPieces.PieceContainer register(Class<? extends SpellPiece> clazz, String name, String group) {

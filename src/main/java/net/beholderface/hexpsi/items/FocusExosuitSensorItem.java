@@ -6,6 +6,8 @@ import at.petrak.hexcasting.api.item.IotaHolderItem;
 import at.petrak.hexcasting.api.utils.NBTHelper;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.item.ItemStack;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import org.jetbrains.annotations.Nullable;
 import vazkii.psi.common.item.ItemExosuitSensor;
 
@@ -43,4 +45,9 @@ public abstract class FocusExosuitSensorItem extends ItemExosuitSensor implement
     }
 
     public abstract String getRequirementText();
+
+    @OnlyIn(Dist.CLIENT)
+    public int getColor(ItemStack stack) {
+        return 12027607;
+    }
 }

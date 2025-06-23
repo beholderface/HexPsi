@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "C": {
+      "tag": "psi:cores"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    },
+    "W": {
+      "item": "hexcasting:slate_block"
+    }
+  },
+  "pattern": [
+    " SC",
+    " WS",
+    "S  "
+  ],
+  "result": {
+    "item": "hexpsi:psi_core_staff"
+  }
+}

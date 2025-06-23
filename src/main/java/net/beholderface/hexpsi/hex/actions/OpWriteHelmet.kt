@@ -30,7 +30,8 @@ class OpWriteHelmet : ConstMediaAction {
                         PsiArmorEvent.post(PsiArmorEvent(player, FocusExosuitSensorItem.EVENT_TYPE))
                         return listOf()
                     } else {
-                        throw MishapInvalidIota(toWrite, 0, Component.translatable("hexpsi.helmetrequires.${sensorItem.requirementText}"))
+                        throw MishapInvalidIota(toWrite, 0, Component.translatable("hexpsi.helmetrequires")
+                            .append(Component.translatable("hexpsi.helmetrequires.${sensorItem.requirementText}")))
                     }
                 }
             }

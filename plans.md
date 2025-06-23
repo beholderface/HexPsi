@@ -9,13 +9,14 @@ Currently implemented:
 - Spell piece to read vector from helmet
 - Hex pattern to read iota from helmet
 - Hex pattern to read psi meter
+- Make spell pieces actually error
+- Spell pieces to read compatible hex iotas
 
 To do:
-- Spell pieces to read compatible hex iotas
-- Make spell pieces actually error
 
 Planned for later: 
 - More sensors for more iota types
+- Non-placeholder textures for most spell pieces and psi core staff
 
 Maybe:
 - Amethyst CAD components (phial battery?)

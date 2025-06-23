@@ -1,7 +1,10 @@
 package net.beholderface.hexpsi.pieces.trick;
 
+import at.petrak.hexcasting.api.HexAPI;
 import at.petrak.hexcasting.api.player.Sentinel;
 import at.petrak.hexcasting.xplat.IXplatAbstractions;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.ServerPlayer;
 import vazkii.psi.api.internal.Vector3;
 import vazkii.psi.api.spell.*;
 import vazkii.psi.api.spell.param.ParamNumber;
@@ -45,7 +48,16 @@ public class PieceTrickSetSentinel extends PieceTrick {
             if (tier == 0){
                 IXplatAbstractions.INSTANCE.setSentinel(context.caster, null);
             } else {
-                IXplatAbstractions.INSTANCE.setSentinel(context.caster, new Sentinel(tier == 2, positionVal.toVec3D(), context.caster.level().dimension()));
+                boolean greater = tier == 2;
+                try {
+                    if (greater && context.caster instanceof ServerPlayer player && !(player.getAdvancements().getOrStartProgress(
+                            player.server.getAdvancements().getAdvancement(new ResourceLocation("hexcasting:enlightenment"))).isDone())){
+                        throw new SpellRuntimeException("hexpsi.spellerror.enlightenment");
+                    }
+                } catch (NullPointerException exception){
+                    throw new SpellRuntimeException("hexpsi.spellerror.enlightenment");
+                }
+                IXplatAbstractions.INSTANCE.setSentinel(context.caster, new Sentinel(greater, positionVal.toVec3D(), context.caster.level().dimension()));
             }
             return null;
         }

@@ -38,7 +38,7 @@ public class PieceTrickWriteEntities extends PieceTrickWriteIota{
         Iota iota = new ListIota(list);
         Player truename = MishapOthersName.getTrueNameFromDatum(iota, context.caster);
         if (truename != null && truename != context.caster){
-            return null;
+            throw new SpellRuntimeException("hexpsi.spellerror.truename");
         }
         this.holder.writeIota(iota, false);
         return null;
