@@ -2,6 +2,8 @@ package net.beholderface.hexpsi.registry;
 
 import com.mojang.datafixers.util.Pair;
 import net.beholderface.hexpsi.HexPsi;
+import net.beholderface.hexpsi.pieces.PieceFXSuppressor;
+import net.beholderface.hexpsi.pieces.PieceMediaReportSuppressor;
 import net.beholderface.hexpsi.pieces.selector.PieceSelectorHelmetVector;
 import net.beholderface.hexpsi.pieces.selector.PieceSelectorSentinelPos;
 import net.beholderface.hexpsi.pieces.selector.PieceSelectorSentinelTier;
@@ -37,6 +39,9 @@ public class HexPsiPieces {
     public static ModSpellPieces.PieceContainer trickWriteEntity;
     public static ModSpellPieces.PieceContainer trickWriteEntities;
 
+    public static ModSpellPieces.PieceContainer modifierHideFX;
+    public static ModSpellPieces.PieceContainer modifierHideReport;
+
     public static void init(){
         selectorSentinelPos = register(PieceSelectorSentinelPos.class, "selector_sentinel_pos", "sentinels");
         selectorSentinelTier = register(PieceSelectorSentinelTier.class, "selector_sentinel_tier", "sentinels");
@@ -53,6 +58,9 @@ public class HexPsiPieces {
         trickWriteNum = register(PieceTrickWriteNumber.class, "trick_write_iota_num", "iota_io");
         trickWriteEntity = register(PieceTrickWriteEntity.class, "trick_write_iota_entity", "iota_io");
         trickWriteEntities = register(PieceTrickWriteEntities.class, "trick_write_iota_entities", "iota_io");
+
+        modifierHideFX = register(PieceFXSuppressor.class, "fx_suppressor", "hex_manipulators");
+        modifierHideReport = register(PieceMediaReportSuppressor.class, "media_suppressor", "hex_manipulators");
     }
 
     public static ModSpellPieces.PieceContainer register(Class<? extends SpellPiece> clazz, String name, String group) {

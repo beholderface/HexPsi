@@ -1,0 +1,31 @@
+package net.beholderface.hexpsi.pieces;
+
+import net.beholderface.hexpsi.items.TrinketSpellBulletItem;
+import vazkii.psi.api.spell.*;
+
+public class PieceMediaReportSuppressor extends SpellPiece {
+
+    public PieceMediaReportSuppressor(Spell spell) {
+        super(spell);
+    }
+
+    public void addToMetadata(SpellMetadata meta) {
+        meta.setFlag(TrinketSpellBulletItem.TAG_SUPPRESS_REPORT, true);
+    }
+
+    public EnumPieceType getPieceType() {
+        return EnumPieceType.MODIFIER;
+    }
+
+    public Class<?> getEvaluationType() {
+        return Void.class;
+    }
+
+    public Object evaluate() {
+        return null;
+    }
+
+    public Object execute(SpellContext context) {
+        return null;
+    }
+}

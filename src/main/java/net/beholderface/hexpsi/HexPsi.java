@@ -65,7 +65,7 @@ public class HexPsi
     }
 
     private void addToCreative(BuildCreativeModeTabContentsEvent event){
-        Item[] psiTabItems = {HexPsiItems.HELMET_SENSOR_FOCUS.get()};
+        Item[] psiTabItems = {HexPsiItems.HELMET_SENSOR_FOCUS.get(), HexPsiItems.TRINKET_SPELL_BULLET.get()};
         Item[] hexTabItems = {HexPsiItems.PSI_CORE_STAFF.get()};
         if (event.getTabKey() == PsiCreativeTab.PSI_CREATIVE_TAB){
             for (Item i : psiTabItems){

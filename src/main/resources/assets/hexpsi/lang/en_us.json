@@ -26,6 +26,11 @@
   "hexpsi.spellpiece.trick_write_iota_entities": "Trick: Write Entity List",
   "hexpsi.spellpiece.trick_write_iota_entities.desc": "Attempts to write a list of entities to held iota storage.",
 
+  "hexpsi.spellpiece.fx_suppressor": "Hex Effect Suppressor",
+  "hexpsi.spellpiece.fx_suppressor.desc": "Disables basic sounds/particles from a hex cast via Trinket Bullet.",
+  "hexpsi.spellpiece.media_suppressor": "Media Report Suppressor",
+  "hexpsi.spellpiece.media_suppressor.desc": "Disables the media report after a hex cast via Trinket Bullet.",
+
   "psi.spellparam.hexpsi:sentineltier": "Tier",
   "psi.spellparam.hexpsi:vec": "Vector",
   "psi.spellparam.hexpsi:num": "Number",
@@ -43,5 +48,12 @@
   "hexpsi.badhelmet.readable": "Helmet does not contain a readable iota.",
 
   "item.hexpsi.exosuit_vector_focus_sensor": "Exosuit Sensor: Vector Write",
-  "item.hexpsi.psi_core_staff": "Psion's Staff"
+  "item.hexpsi.psi_core_staff": "Psion's Staff",
+  "item.hexpsi.spell_bullet_trinket": "Trinket Bullet",
+  "item.hexpsi.spell_bullet_trinket_active": "Programmed Trinket Bullet",
+
+  "this.is.a.comment.1": "Lore-wise, I think the trinket parts of the bullet act kind of like a coprocessor that the CAD dispatches instructions to.",
+
+  "hexpsi.tooltip.bullet_media": "%s: %s/%s (%s)",
+  "hexpsi.tooltip.bullet_name_default": "Spell"
 }

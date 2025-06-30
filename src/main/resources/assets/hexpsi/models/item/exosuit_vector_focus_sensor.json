@@ -1,3 +1,6 @@
 {
-  "parent": "psi:item/_standard_sensor"
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "hexpsi:item/exosuit_vector_focus_sensor"
+  }
 }

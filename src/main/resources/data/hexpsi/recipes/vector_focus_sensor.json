@@ -2,20 +2,26 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "D": {
+    "F": {
       "item": "hexcasting:focus"
     },
-    "G": {
+    "A": {
       "item": "hexcasting:charged_amethyst"
     },
     "I": {
       "tag": "forge:ingots/psimetal"
+    },
+    "G": {
+      "tag": "forge:gems/psigem"
+    },
+    "M": {
+      "item": "minecraft:compass"
     }
   },
   "pattern": [
     " G ",
-    "IDI",
-    " G "
+    "IFI",
+    "AMA"
   ],
   "result": {
     "item": "hexpsi:exosuit_vector_focus_sensor"

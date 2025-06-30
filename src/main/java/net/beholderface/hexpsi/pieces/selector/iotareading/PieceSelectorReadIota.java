@@ -2,7 +2,6 @@ package net.beholderface.hexpsi.pieces.selector.iotareading;
 
 import at.petrak.hexcasting.api.addldata.ADIotaHolder;
 import at.petrak.hexcasting.api.casting.iota.Iota;
-import at.petrak.hexcasting.api.casting.iota.IotaType;
 import at.petrak.hexcasting.xplat.IXplatAbstractions;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.item.ItemStack;
@@ -26,17 +25,16 @@ public abstract class PieceSelectorReadIota extends PieceSelector {
         assert context.caster != null;
         for (ItemStack checkedStack : context.caster.getHandSlots()){
             var holder = IXplatAbstractions.INSTANCE.findDataHolder(checkedStack);
+            this.holder = holder;
             if (holder != null){
-                this.holder = holder;
                 this.iota = holder.readIota((ServerLevel) context.caster.level());
                 if (this.iota == null || !this.isCompatibleIota(this.iota)){
                     throw new SpellRuntimeException("hexpsi.spellerror.unreadablecontents");
                 }
-                return null;
             }
         }
         if (this.holder == null){
-            throw new SpellRuntimeException("hexpsi.spellerror.readeble");
+            throw new SpellRuntimeException("hexpsi.spellerror.readable");
         }
         return null;
     }
