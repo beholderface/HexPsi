@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "hexpsi:item/spell_bullet_trinket"
+  }
+}

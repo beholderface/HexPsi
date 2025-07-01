@@ -27,7 +27,7 @@ class OpWriteHelmet : ConstMediaAction {
                 if (sensorItem is FocusExosuitSensorItem){
                     if (sensorItem.canWrite(sensorStack, toWrite)){
                         sensorItem.writeDatum(helmetStack, toWrite)
-                        PsiArmorEvent.post(PsiArmorEvent(player, FocusExosuitSensorItem.EVENT_TYPE))
+                        PsiArmorEvent.post(PsiArmorEvent(player, sensorItem.getEventType(sensorStack)))
                         return listOf()
                     } else {
                         throw MishapInvalidIota(toWrite, 0, Component.translatable("hexpsi.helmetrequires")

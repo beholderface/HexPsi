@@ -39,6 +39,8 @@ public class HexPsiPieces {
     public static ModSpellPieces.PieceContainer trickWriteEntity;
     public static ModSpellPieces.PieceContainer trickWriteEntities;
 
+    public static ModSpellPieces.PieceContainer trickWriteHelmetVector;
+
     public static ModSpellPieces.PieceContainer modifierHideFX;
     public static ModSpellPieces.PieceContainer modifierHideReport;
 
@@ -58,6 +60,8 @@ public class HexPsiPieces {
         trickWriteNum = register(PieceTrickWriteNumber.class, "trick_write_iota_num", "iota_io");
         trickWriteEntity = register(PieceTrickWriteEntity.class, "trick_write_iota_entity", "iota_io");
         trickWriteEntities = register(PieceTrickWriteEntities.class, "trick_write_iota_entities", "iota_io");
+
+        trickWriteHelmetVector = register(PieceTrickWriteHelmetVector.class, "trick_write_helmet_vec", "iota_io");
 
         modifierHideFX = register(PieceFXSuppressor.class, "fx_suppressor", "hex_manipulators");
         modifierHideReport = register(PieceMediaReportSuppressor.class, "media_suppressor", "hex_manipulators");

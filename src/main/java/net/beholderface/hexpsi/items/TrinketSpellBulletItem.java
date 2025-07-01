@@ -32,6 +32,8 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.Nullable;
 import vazkii.psi.api.PsiAPI;
@@ -260,10 +262,23 @@ public class TrinketSpellBulletItem extends ItemSpellBullet implements HexHolder
 
     @Nonnull
     public Component getName(@Nonnull ItemStack stack) {
+        Component bulletName = super.getName(stack);
         if (ISpellAcceptor.hasSpell(stack)) {
-            return this.getHoverText(stack, false);
+            float fullness = this.getMediaFullness(stack);
+            String rawPercentage = String.valueOf(fullness * 100.0f);
+            String formattedPercentage = (fullness == 1.0f ? "100" : rawPercentage.substring(0, Math.min(rawPercentage.length(), 4))) + "%";
+            Component percentage = Component.literal(" (").append(Component.literal(formattedPercentage).withStyle((style)->style.withColor(HEX_COLOR))).append(Component.literal(")"));
+            return bulletName.copy().append(percentage);
         } else {
-            return super.getName(stack);
+            return bulletName;
         }
+    }
+
+    public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced){
+        long maxMedia = this.getMaxMedia(pStack);
+        if (maxMedia > 0L) {
+            pTooltipComponents.add(this.getHoverText(pStack, true));
+        }
+        super.appendHoverText(pStack, pLevel, pTooltipComponents, pIsAdvanced);
     }
 }

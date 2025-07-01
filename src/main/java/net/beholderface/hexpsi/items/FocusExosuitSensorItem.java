@@ -14,7 +14,7 @@ import vazkii.psi.common.item.ItemExosuitSensor;
 public abstract class FocusExosuitSensorItem extends ItemExosuitSensor implements IotaHolderItem {
 
     public static final String TAG_IOTA_DATA = "hexpsi:iotastorage";
-    public static final String EVENT_TYPE = "hexpsi.event.writehelmet";
+    public static final String EVENT_TYPE = "hexpsi.event.write_helmet";
 
     public FocusExosuitSensorItem(Properties properties) {
         super(properties);

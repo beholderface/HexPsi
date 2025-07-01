@@ -3,8 +3,9 @@
   "hexpsi.spellpiece.selector_sentinel_pos.desc": "Returns your sentinel's position.",
   "hexpsi.spellpiece.selector_sentinel_tier": "Selector: Sentinel Tier",
   "hexpsi.spellpiece.selector_sentinel_tier.desc": "Returns your sentinel's tier, with a nonexistent or inaccessible sentinel returning 0.",
+
   "hexpsi.spellpiece.selector_helmet_vec": "Selector: Helmet Vector",
-  "hexpsi.spellpiece.selector_helmet_vec.desc": "Returns the vector stored in your helmet sensor.",
+  "hexpsi.spellpiece.selector_helmet_vec.desc": "Attempts to read the vector stored in your helmet sensor.",
 
   "hexpsi.spellpiece.selector_read_vec": "Selector: Held Vector",
   "hexpsi.spellpiece.selector_read_vec.desc": "Attempts to read a vector from held iota storage.",
@@ -14,6 +15,9 @@
   "hexpsi.spellpiece.selector_read_entity.desc": "Attempts to read an entity from held iota storage.",
   "hexpsi.spellpiece.selector_read_entities": "Selector: Held Entities",
   "hexpsi.spellpiece.selector_read_entities.desc": "Attempts to read a list of entities from held iota storage.",
+
+  "hexpsi.spellpiece.trick_write_helmet_vec": "Trick: Write Helmet Vector",
+  "hexpsi.spellpiece.trick_write_helmet_vec.desc": "Attempts to write a vector to your helmet sensor. Does not trigger the sensor.",
 
   "hexpsi.spellpiece.trick_set_sentinel": "Trick: Set Sentinel",
   "hexpsi.spellpiece.trick_set_sentinel.desc": "Summons your sentinel at the target position.",
@@ -42,6 +46,7 @@
   "hexpsi.spellerror.writeable": "ERROR: No writeable item found.",
   "hexpsi.spellerror.readable": "ERROR: No readable item found.",
   "hexpsi.spellerror.unreadablecontents": "ERROR: Readable item does not contain readable data.",
+  "hexpsi.spellerror.badtier": "ERROR: Sentinel tier must be an integer between [0,2].",
 
   "hexpsi.helmetrequires": "Helmet sensor requires ",
   "hexpsi.helmetrequires.vector": "a vector.",
@@ -55,5 +60,7 @@
   "this.is.a.comment.1": "Lore-wise, I think the trinket parts of the bullet act kind of like a coprocessor that the CAD dispatches instructions to.",
 
   "hexpsi.tooltip.bullet_media": "%s: %s/%s (%s)",
-  "hexpsi.tooltip.bullet_name_default": "Spell"
+  "hexpsi.tooltip.bullet_name_default": "Spell",
+
+  "hexpsi.event.write_helmet_vector": "§bEvent§7: Write Vector Iota"
 }

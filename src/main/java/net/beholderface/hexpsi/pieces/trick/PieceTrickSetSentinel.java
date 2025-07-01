@@ -29,25 +29,26 @@ public class PieceTrickSetSentinel extends PieceTrick {
         super.addToMetadata(meta);
         Double powerVal = (Double)this.getParamEvaluation(this.tier);
         if (powerVal != null) {
-            powerVal = Math.max((double)0F, powerVal);
-            meta.addStat(EnumSpellStat.POTENCY, (int)Math.max(powerVal * (double)25.0F, 10.0f));
-            meta.addStat(EnumSpellStat.COST, (int)(Math.max(powerVal * (double)250.0F, 25.0F)));
-        } else {
-            throw new SpellCompilationException("psi.spellerror.nonpositivevalue", this.x, this.y);
+            if (powerVal == 0 || powerVal == 1 || powerVal == 2){
+                meta.addStat(EnumSpellStat.POTENCY, (int)Math.max(powerVal * (double)25.0F, 10.0f));
+                meta.addStat(EnumSpellStat.COST, (int)(Math.max(powerVal * (double)250.0F, 25.0F)));
+            } else {
+                throw new SpellCompilationException("hexpsi.spellerror.badtier", this.x, this.y);
+            }
         }
     }
 
     public Object execute(SpellContext context) throws SpellRuntimeException {
         Vector3 positionVal = (Vector3)this.getParamValue(context, this.position);
-        int tier = this.getParamValue(context, this.tier).intValue();
+        double tier = this.getParamValue(context, this.tier).doubleValue();
         if (positionVal == null) {
             throw new SpellRuntimeException("psi.spellerror.nullvector");
         } else if (!context.isInRadius(positionVal)) {
             throw new SpellRuntimeException("psi.spellerror.outsideradius");
         } else {
-            if (tier == 0){
+            if (tier == 0.0){
                 IXplatAbstractions.INSTANCE.setSentinel(context.caster, null);
-            } else {
+            } else if (tier == 1.0 || tier == 2.0) {
                 boolean greater = tier == 2;
                 try {
                     if (greater && context.caster instanceof ServerPlayer player && !(player.getAdvancements().getOrStartProgress(
@@ -58,6 +59,8 @@ public class PieceTrickSetSentinel extends PieceTrick {
                     throw new SpellRuntimeException("hexpsi.spellerror.enlightenment");
                 }
                 IXplatAbstractions.INSTANCE.setSentinel(context.caster, new Sentinel(greater, positionVal.toVec3D(), context.caster.level().dimension()));
+            } else {
+                throw new SpellRuntimeException("hexpsi.spellerror.badtier");
             }
             return null;
         }

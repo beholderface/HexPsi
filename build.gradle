@@ -210,6 +210,7 @@ dependencies {
 
 mixin {
     add sourceSets.main, "hexpsi.refmap.json"
+    config "hexpsi.mixins.json"
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.
@@ -223,6 +224,7 @@ tasks.named('processResources', ProcessResources).configure {
             loader_version_range: loader_version_range,
             mod_id: mod_id, mod_name: mod_name, mod_license: mod_license, mod_version: mod_version,
             mod_authors: mod_authors, mod_description: mod_description,
+            psi_version: psi_version,
     ]
     inputs.properties replaceProperties
 
