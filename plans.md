@@ -12,6 +12,7 @@ Currently implemented:
 - Make spell pieces actually error
 - A spell bullet that triggers a hex written to it like a trinket
 - Spell pieces to suppress the above hex's cast effects, and the media report the bullet does
+- Reading/writing from a CAD via Scribe's interacts with the list of its stored vectors (writing may be disabled in the future)
 
 To do:
 - Limitations for the trinket bullet's casting (eldritchcarmaker suggests ambit based on where the bullet is)
@@ -19,12 +20,10 @@ To do:
 Planned for later:
 - More sensors for more iota types (and associated spell pieces)
 - Non-placeholder textures for most spell pieces
-- Reading from a CAD via Scribe's returns the list of its stored vectors
 - Dedicated pattern to get the above when the CAD isn't in your hand
-- Spell pieces to write to your helmet focus
+- Treat CADs themselves as media holders in order to more easily recharge trinket bullets
 
 Maybe:
 - Amethyst CAD components (phial battery?)
 - Psi material hex trinkets or similar
 - CAD battery as insulation against hex bloodcasting
-- The ability to write vector lists to CADs via Scribe's

@@ -54,8 +54,8 @@
 
   "item.hexpsi.exosuit_vector_focus_sensor": "Exosuit Sensor: Vector Write",
   "item.hexpsi.psi_core_staff": "Psion's Staff",
-  "item.hexpsi.spell_bullet_trinket": "Trinket Bullet",
-  "item.hexpsi.spell_bullet_trinket_active": "Programmed Trinket Bullet",
+  "item.hexpsi.spell_bullet_trinket": "Trinket Spell Bullet",
+  "item.hexpsi.spell_bullet_trinket_active": "Programmed Trinket Spell Bullet",
 
   "this.is.a.comment.1": "Lore-wise, I think the trinket parts of the bullet act kind of like a coprocessor that the CAD dispatches instructions to.",
 

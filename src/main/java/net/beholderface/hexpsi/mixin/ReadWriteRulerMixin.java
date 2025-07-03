@@ -13,7 +13,7 @@ import vazkii.psi.common.item.ItemVectorRuler;
 import vazkii.psi.common.item.base.ModItems;
 
 @Mixin(ItemVectorRuler.class)
-public class ReadFromRulerMixin implements IotaHolderItem {
+public class ReadWriteRulerMixin implements IotaHolderItem {
     @Override
     public @Nullable CompoundTag readIotaTag(ItemStack itemStack) {
         Vec3 vec = ((ItemVectorRuler) ModItems.vectorRuler).getVector(itemStack).toVec3D();

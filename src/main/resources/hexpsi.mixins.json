@@ -6,7 +6,8 @@
   "mixins": [
     "HelmetVectorStorageMixin",
     "PlayerRegenRateMixin",
-    "ReadFromRulerMixin",
+    "ReadWriteCADMixin",
+    "ReadWriteRulerMixin",
     "SentinelPsiAmbitMixin"
   ],
   "minVersion": "0.8.5"
